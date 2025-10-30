@@ -4,6 +4,7 @@ import time
 import urllib
 import uuid
 from typing import Dict, List, Generator, Iterator
+from random_ip_generator import random_ip
 
 import requests
 from requests_html import HTMLSession
@@ -35,6 +36,7 @@ class MetaAI:
             {
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
                 "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+                "X-Forwarded-For": random_ip()
             }
         )
         self.access_token = None
